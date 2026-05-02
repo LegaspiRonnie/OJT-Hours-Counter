@@ -80,7 +80,7 @@ export default function OJTCounter() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!session) {
-      signIn("google")
+      signIn("google", { callbackUrl: "/" })
       return
     }
     if (form.timeOut <= form.timeIn) {
@@ -217,7 +217,7 @@ export default function OJTCounter() {
                 ) : (
                   <>
                     <button
-                      onClick={() => signIn("google")}
+                      onClick={() => signIn("google", { callbackUrl: "/" })}
                       className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
                     >
                       Sign In with Google
