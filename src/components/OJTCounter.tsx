@@ -54,7 +54,8 @@ export default function OJTCounter() {
           inputValue: 486,
           showCancelButton: true,
           inputValidator: (value) => {
-            if (!value || value <= 0) {
+            const numeric = value ? parseFloat(value) : NaN
+            if (Number.isNaN(numeric) || numeric <= 0) {
               return 'Please enter a valid number greater than 0'
             }
           }
